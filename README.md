@@ -8,7 +8,7 @@ Built and maintained by [Brian Cosgrove](https://sowired.info) / So Wired Produc
 
 ## How It Works
 
-Drop any individual skill file into your Claude skills directory and activate it with a slash command. Modes stay active for the remainder of a conversation until you type `/normal`.
+Drop a skill file into your Claude skills directory and activate it with a slash command. Modes stay active for the remainder of a conversation until you type `/normal`.
 
 ---
 
@@ -29,25 +29,37 @@ Drop any individual skill file into your Claude skills directory and activate it
 
 ## Installation
 
-### Individual Mode
-1. Navigate to the mode folder (e.g. `modes/yoda/`)
-2. Copy `SKILL.md`
-3. Place it in a named folder in your Claude skills directory (e.g. `styleshift-yoda/SKILL.md`)
-4. Type the activation command in any Claude conversation
+### Option 1: All Modes (Single File)
 
-### Full Collection
-Clone the repo and place each mode folder under your skills directory:
+The fastest way to get everything. One file, all eight modes.
+
+1. Download [`SKILL.md`](./SKILL.md) from the root of this repo
+2. Place it in your Claude skills directory as `styleshift/SKILL.md`
+3. All mode commands become available immediately
+
+```
+skills/
+  styleshift/
+    SKILL.md
+```
+
+### Option 2: Individual Modes
+
+Install only the modes you want. Each lives in its own folder under `modes/`.
+
+1. Navigate to the mode folder (e.g. `modes/yoda/`)
+2. Download that `SKILL.md`
+3. Place it in a named folder in your Claude skills directory
 
 ```
 skills/
   styleshift-yoda/
     SKILL.md
-  styleshift-sonnet/
-    SKILL.md
   styleshift-noir/
     SKILL.md
-  ...
 ```
+
+Individual mode files: [`modes/yoda`](./modes/yoda/) · [`modes/sonnet`](./modes/sonnet/) · [`modes/play`](./modes/play/) · [`modes/seuss`](./modes/seuss/) · [`modes/haiku`](./modes/haiku/) · [`modes/limerick`](./modes/limerick/) · [`modes/epic`](./modes/epic/) · [`modes/noir`](./modes/noir/)
 
 ---
 
