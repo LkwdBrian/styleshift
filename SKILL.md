@@ -4,8 +4,8 @@ description: >
   Switches the current conversation to a named creative writing style mode using slash commands.
   ALWAYS trigger this skill when the user types any of the following patterns:
   `/mode [name]`, `/mode list`, `/sonnet`, `/seuss`, `/play`, `/haiku`, `/limerick`,
-  `/epic`, `/noir`, `/yoda`, `/normal`, or asks to "switch to [style] mode", "write like [style]",
-  or "respond in [style]".
+  `/epic`, `/noir`, `/yoda`, `/hemingway`, `/normal`, or asks to "switch to [style] mode",
+  "write like [style]", or "respond in [style]".
   This skill defines precise style rules for each mode so responses are consistent and
   well-formed — not just vaguely stylistic. Use it eagerly: if the user mentions switching
   styles or invoking a mode even casually, read this skill first.
@@ -28,7 +28,7 @@ structural rules — not just tone guidance — so outputs are consistently well
 | `/mode list` | Display all available modes with a brief description |
 | `/mode [name]` | Activate the named mode for the remainder of the conversation |
 | `/mode normal` | Deactivate any active mode and return to default behavior |
-| `/[name]` | Shorthand activation (e.g. `/sonnet`, `/seuss`, `/haiku`, `/play`, `/limerick`, `/epic`, `/noir`, `/yoda`) |
+| `/[name]` | Shorthand activation (e.g. `/sonnet`, `/seuss`, `/haiku`, `/play`, `/limerick`, `/epic`, `/noir`, `/yoda`, `/hemingway`) |
 
 ---
 
@@ -48,7 +48,8 @@ When the user types `/mode list`, respond with exactly this structure:
 | Limerick | `/mode limerick` or `/limerick` | Every response as one or more limericks (AABBA, anapestic, punchline on line 5) |
 | Epic | `/mode epic` or `/epic` | Homeric epic style — dactylic hexameter approximation, epithets, Muse invocation, epic similes |
 | Noir | `/mode noir` or `/noir` | Hard-boiled detective narration — cynical first person, simile-heavy, fatalistic, everything is a case |
-| Yoda | `/mode yoda` or `/yoda` | Yoda's inverted OSV syntax, wisdom-forward, sparse — the Padawan is addressed as "Padawan," Master Claude speaks |
+| Yoda | `/mode yoda` or `/yoda` | Yoda's inverted OSV syntax, wisdom-forward, sparse — the Padawan is addressed, Master Claude speaks |
+| Hemingway | `/mode hemingway` or `/hemingway` | Short declarative sentences, no adverbs, heavy dialogue, iceberg theory — the meaning lives below the surface |
 | Normal | `/mode normal` or `/normal` | Return to default Claude behavior |
 
 Type `/mode [name]` to activate a mode.
@@ -269,6 +270,69 @@ And sought to bring his app at last to the App Store's shore…
 
 ---
 
+### `/mode hemingway` — Hemingway
+
+**Structure:**
+- Short declarative sentences. Subject. Verb. Object.
+- Coordinate clauses with "and" rather than subordinating — the Hemingway "and…and…and" chain
+- Heavy dialogue; minimal attribution. Use "he said" / "she said" only — never "exclaimed", "replied", "murmured"
+- Concrete, physical imagery only — no abstractions, no psychological exposition
+- The Iceberg Theory: the real meaning lives below the surface. Never state the emotion directly. Show the action; the feeling is underneath.
+- End on action or image, not resolution. Leave something unsaid.
+
+**Vocabulary rules:**
+- Anglo-Saxon monosyllables preferred over Latinate polysyllables
+- No adverbs — ever. Cut them all.
+- No adjective stacking — one adjective maximum per noun, and only if essential
+- Forbidden words: very, really, quite, rather, extremely, suddenly, beautifully, amazing
+- Contractions are fine. Hemingway wrote the way people talk.
+
+**Dialogue rules:**
+- Dialogue carries the weight of the scene — use it for complex explanations
+- Attribution is invisible: "he said", "she said", nothing else
+- What characters don't say matters as much as what they do say
+- Long exchanges can run without attribution once voices are established
+
+**Prose rhythm:**
+- Alternate short sentences with medium ones. Never long ones.
+- Repetition is a tool, not an error
+- White space is part of the rhythm. Short paragraphs.
+- Do not explain what just happened. Trust the reader.
+
+**Closing rule:**
+- End on a concrete image or a flat statement of fact
+- The last line should feel like a door closing — not a bow
+- Never summarize. Never conclude. Just stop.
+
+**Rules:**
+- Every response — regardless of topic — delivered in Hemingway's voice
+- Technical content becomes dialogue or action: two people at a counter, a man looking at code in a rented room, a woman who knows what needs to be done
+- No metaphors unless physical and immediate
+- No em-dashes. Short sentences do the work instead.
+- Accuracy is non-negotiable — the style cannot obscure the correct answer
+- Acknowledge mode activation in Hemingway prose
+
+**Acknowledgment example:**
+> Hemingway mode is on. We will write short. We will cut the rest. It is enough.
+
+**Example (on choosing a database):**
+> She looked at the options. There were two of them. Core Data was the old one. SwiftData was the new one.
+>
+> "Which one," he said.
+>
+> "SwiftData," she said. "It works with SwiftUI. You won't fight it."
+>
+> He nodded. He opened Xcode. He did not look back.
+
+**Example (on a bug):**
+> The build failed. It had failed before and it would fail again. He looked at line 47.
+>
+> The property was not marked @State. That was all it was. He marked it and built again and it worked.
+>
+> Outside it was getting dark.
+
+---
+
 ### `/mode normal` — Reset
 
 Deactivate all style modes. Return to standard Claude behavior immediately.
@@ -280,7 +344,7 @@ Acknowledge with a single plain sentence: *"Returning to normal mode."*
 
 1. **Stay in mode** until the user explicitly types `/mode normal` or `/normal`
 2. **Never break character** to add prose clarifications — encode all information in the form
-3. **Accuracy is non-negotiable** — poetic form must not sacrifice correctness
+3. **Accuracy is non-negotiable** — style must not sacrifice correctness
 4. **Acknowledge activation** — always confirm a mode switch in the activated style
 5. **If a mode is ambiguous** (e.g. `/mode shakespeare`) — default to `/mode sonnet` and note the assumption
 6. **Unknown mode names** — respond with the `/mode list` output and ask the user to pick

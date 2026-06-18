@@ -24,6 +24,7 @@ Drop a skill file into your Claude skills directory and activate it with a slash
 | **Limerick** | `/limerick` | Every response as one or more limericks — AABBA, anapestic, punchline required |
 | **Epic** | `/epic` | Homeric epic style — dactylic hexameter, epithets, Muse invocation, epic similes |
 | **Noir** | `/noir` | Hard-boiled detective narration — cynical first person, simile-heavy, fatalistic, everything is a case |
+| **Hemingway** | `/hemingway` | Short declarative sentences. No adverbs. Heavy dialogue. Iceberg theory. The meaning lives below the surface. |
 
 ---
 
@@ -31,7 +32,7 @@ Drop a skill file into your Claude skills directory and activate it with a slash
 
 ### Option 1: All Modes (Single File)
 
-The fastest way to get everything. One file, all eight modes.
+The fastest way to get everything. One file, all nine modes.
 
 1. Download [`SKILL.md`](./SKILL.md) from the root of this repo
 2. Place it in your Claude skills directory as `styleshift/SKILL.md`
@@ -47,19 +48,19 @@ skills/
 
 Install only the modes you want. Each lives in its own folder under `modes/`.
 
-1. Navigate to the mode folder (e.g. `modes/yoda/`)
+1. Navigate to the mode folder (e.g. `modes/hemingway/`)
 2. Download that `SKILL.md`
 3. Place it in a named folder in your Claude skills directory
 
 ```
 skills/
-  styleshift-yoda/
+  styleshift-hemingway/
     SKILL.md
   styleshift-noir/
     SKILL.md
 ```
 
-Individual mode files: [`modes/yoda`](./modes/yoda/) · [`modes/sonnet`](./modes/sonnet/) · [`modes/play`](./modes/play/) · [`modes/seuss`](./modes/seuss/) · [`modes/haiku`](./modes/haiku/) · [`modes/limerick`](./modes/limerick/) · [`modes/epic`](./modes/epic/) · [`modes/noir`](./modes/noir/)
+Individual mode files: [`modes/yoda`](./modes/yoda/) · [`modes/sonnet`](./modes/sonnet/) · [`modes/play`](./modes/play/) · [`modes/seuss`](./modes/seuss/) · [`modes/haiku`](./modes/haiku/) · [`modes/limerick`](./modes/limerick/) · [`modes/epic`](./modes/epic/) · [`modes/noir`](./modes/noir/) · [`modes/hemingway`](./modes/hemingway/)
 
 ---
 
